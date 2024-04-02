@@ -2,6 +2,8 @@
 
 Dataset: https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
 
+test
+
 ## Dataset Description:
 Our dataset comprises 3-second excerpts from songs spanning 10 distinct genres. Each data point is characterized by 60 features, encompassing key audio metrics such as the root mean square value, spectral centroid value, and zero-crossing rate. These are all metrics used within the music industry to quantify sound. Each of the 10 genres is represented by 100 songs, and each song is further divided into 10 separate 3-second excerpts. This division ensures a comprehensive and varied representation of each genre, contributing to the diversity of our dataset.
 
