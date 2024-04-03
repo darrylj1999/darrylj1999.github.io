@@ -169,6 +169,7 @@ Shorter samples. We want to conduct an ablation study to determine the minimum l
 ### Visualizations:
 Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 
+![loss_GRU](https://github.com/darrylj1999/darrylj1999.github.io/blob/main/Figure_1.png)
 
 [1] M. S. Rao, O. Pavan Kalyan, N. N. Kumar, M. Tasleem Tabassum and B. Srihari, "Automatic Music Genre Classification Based on Linguistic Frequencies Using Machine Learning," 2021 International Conference on Recent Advances in Mathematics and Informatics (ICRAMI), Tebessa, Algeria, 2021, pp. 1-5, doi: 10.1109/ICRAMI52622.2021.9585937.
 
