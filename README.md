@@ -48,12 +48,12 @@ For this project, our inputs are 3 second excerpts from possible songs. We itera
 ## Random Forest
 We used accuracy as well as F1 score to measure the success of the random forest model. Before implementing the model, min-max scaling was implemented on all the numeric variables. This normalizes the data to ensure that data at different scales contribute equally to the model fitting. After performing the normalization, the model was trained on an 80/20 train test split. An accuracy of 0.871 and an F1 score of 0.870 was achieved by our initial random forest model. The F1 score across each genre is shown below. 
 
-![rf_f1](josh_1.png)
+![rf_f1](./josh_1.png)
 
 Comparable F1 scores were achieved across the different genres, with classical performing the best. Another feature of the random forest model is the calculation of feature importance. This tells us which features are most important in the model for differentiating between the genres.
 
 
-![percept_var](josh_2.png)
+![percept_var](./josh_2.png)
 
 Perceptron variance was the most important feature.
 
@@ -180,7 +180,7 @@ Shorter samples. We want to conduct an ablation study to determine the minimum l
 ### Visualizations:
 Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 
-![loss_GRU](Figure_1.png)
+![loss_GRU](./Figure_1.png)
 
 [1] M. S. Rao, O. Pavan Kalyan, N. N. Kumar, M. Tasleem Tabassum and B. Srihari, "Automatic Music Genre Classification Based on Linguistic Frequencies Using Machine Learning," 2021 International Conference on Recent Advances in Mathematics and Informatics (ICRAMI), Tebessa, Algeria, 2021, pp. 1-5, doi: 10.1109/ICRAMI52622.2021.9585937.
 
