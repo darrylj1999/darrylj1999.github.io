@@ -55,13 +55,16 @@ Analysis of Algorithm/Model:
 Next Steps:
 
 ## SVM
-Visualizations:
-
-Quantitative Metrics:
-
-Analysis of Algorithm/Model:
+Quantitative metrics:
+Accuracy: Calculate the accuracy of the SVM model on the test dataset.
+Precision and Recall: Compute precision and recall scores to understand the model's performance in binary classification tasks.
+F1 Score: Calculate the F1 score to balance precision and recall.
 
 Next Steps:
+Visualizations: Plot decision boundaries for different SVM kernels (linear, polynomial, radial basis function) to illustrate how they separate classes
+
+Analysis of Algorithm/Model: Comparison with Other Models
+
 
 ## BiLSTM
 ### Quantitative Metrics:
