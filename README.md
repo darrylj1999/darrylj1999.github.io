@@ -48,12 +48,12 @@ For this project, our inputs are 3 second excerpts from possible songs. We itera
 ## Random Forest
 We used accuracy as well as F1 score to measure the success of the random forest model. Before implementing the model, min-max scaling was implemented on all the numeric variables. This normalizes the data to ensure that data at different scales contribute equally to the model fitting. After performing the normalization, the model was trained on an 80/20 train test split. An accuracy of 0.871 and an F1 score of 0.870 was achieved by our initial random forest model. The F1 score across each genre is shown below. 
 
-![rf_f1](https://github.com/darrylj1999/darrylj1999.github.io/blob/main/josh_1.png)
+![josh_1](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/230112eb-aa26-41f5-a26d-cb3542d7911c)
+
 
 Comparable F1 scores were achieved across the different genres, with classical performing the best. Another feature of the random forest model is the calculation of feature importance. This tells us which features are most important in the model for differentiating between the genres.
 
-
-![percept_var](https://github.com/darrylj1999/darrylj1999.github.io/blob/main/josh_2.png)
+![josh_2](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/a1b6c0b2-9712-473f-a6f3-c10d20d1f2e9)
 
 Perceptron variance was the most important feature.
 
@@ -180,7 +180,9 @@ Shorter samples. We want to conduct an ablation study to determine the minimum l
 ### Visualizations:
 Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 
-![loss_GRU](https://github.com/darrylj1999/darrylj1999.github.io/blob/main/Figure_1.png)
+![loss_gru](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/df7f2d93-3cb1-4ec7-9f1a-e06a8e717bce)
+
+
 
 [1] M. S. Rao, O. Pavan Kalyan, N. N. Kumar, M. Tasleem Tabassum and B. Srihari, "Automatic Music Genre Classification Based on Linguistic Frequencies Using Machine Learning," 2021 International Conference on Recent Advances in Mathematics and Informatics (ICRAMI), Tebessa, Algeria, 2021, pp. 1-5, doi: 10.1109/ICRAMI52622.2021.9585937.
 
