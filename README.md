@@ -149,26 +149,11 @@ The most glaring issue is overfitting. Next steps include exploring more ways to
 
 Quantitative Metrics:
 
-We utilize two quantitative metrics to judge the performance of our Gated Recurrent Unit: the (1) Cross Entropy Loss, and (2) the F-measure. We utilize the Cross Entropy Loss to provide gradients to guide training our classifier. The Cross Entropy Loss can be seen as the negated expectation of the predicted posterior of the true genre when using the probability of the true target (i.e., 1). Minimizing this loss leads to a classifier that predicts the correct target distribution for samples within respective genres. We display progress using the F-measure, a harmonic mean of the precision and recall for one target genre averaged over genres. This allows us to ensure genre overrepresentation does not impact class-specific precision.
-
 Analysis of Algorithm/Model:
-
-We achieved accuracies in line with previous research (90.11%). This is shown in the figure on the next page. Further, the ending F-measure was 0.94, precision was 0.95, and recall was 0.93. We achieved these results after making 10,000,000 updates to a 10 x 28 x 14 n-dimensional numpy array of weights.  Each sample is a one dimensional vector of length 661794. Our model processes input frames in chunks of 7 (for divisibility). Our hidden state is also a vector of length 7. We train our model by randomly selecting 100 tracks from all 100 samples found in the dataset.
-
-With respect to the trained model’s behavior, we found the forget gate was usually neglected throughout the forward pass. This might be due to the distinct ‘sounds’ which define the genre a track belongs to. In other words, the model chooses to cumulatively ingest the track (by turning off the forget gate and outputting a consistently small value from the input gate which gates the current hidden and input states (O(1 / sample length)). 
-
-Interestingly, the output gate starts with a high value, implying the hidden state incorporates more of the current cell memory, then tails off. This further supports the hypothesis that song genres can be predicted with segments smaller than three seconds. We saw this tail off occur at different time points for different genres. This implies some genres are more likely to initially confuse the classifier (ex. Hip Hop and Reggae). 
 
 Next Steps:
 
-For the Gated Recurrent Unit, we foresee the following next steps:
-More Genres. Currently, we only represent ten of the 6000 genres identified on Spotify. To be applicable to the average user, we need to represent diverse interests that may not be captured in the range of classical to rock. To get to 50 genres, we would need to expand the number of songs in our dataset fivefold.
-Optimizing Implementation. To train our model for 10,000,000 steps, we needed to wait for almost two hours with a standard-tier Google Cloud CPU. We think we can reduce this time to almost one quarter by using GPUs and parallelizing our training.
-Shorter samples. We want to conduct an ablation study to determine the minimum length of a sample required to correctly identify its genre. We project we can use significantly less than three seconds to achieve a similar accuracy of 90.11%.
-
 Visualizations:
-Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
-
 
 [1] M. S. Rao, O. Pavan Kalyan, N. N. Kumar, M. Tasleem Tabassum and B. Srihari, "Automatic Music Genre Classification Based on Linguistic Frequencies Using Machine Learning," 2021 International Conference on Recent Advances in Mathematics and Informatics (ICRAMI), Tebessa, Algeria, 2021, pp. 1-5, doi: 10.1109/ICRAMI52622.2021.9585937.
 
@@ -185,6 +170,8 @@ Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 [7] L. Yang, J. Hu and Z. Zhang, "Audio Scene Classification Based on Gated Recurrent Unit," 2019 IEEE International Conference on Signal, Information and Data Processing (ICSIDP), Chongqing, China, 2019, pp. 1-5, doi: 10.1109/ICSIDP47821.2019.9173051.
 
 [8] [1] Y. Xu, Q. Kong, Q. Huang, W. Wang, and M. D. Plumbley, “Convolutional gated recurrent neural network incorporating spatial features for audio tagging,” arXiv.org, https://arxiv.org/abs/1702.07787 (accessed Feb. 21, 2024). 
+
+Gantt Chart: [https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true](https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true)
 
 Contribution Table
 | Name | Midterm Contributions |
