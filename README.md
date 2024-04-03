@@ -46,11 +46,17 @@ For this project, our inputs are 3 second excerpts from possible songs. We itera
 # Results and Discussion
 
 ## Random Forest
-Visualizations:
+We used accuracy as well as F1 score to measure the success of the random forest model. Before implementing the model, min-max scaling was implemented on all the numeric variables. This normalizes the data to ensure that data at different scales contribute equally to the model fitting. After performing the normalization, the model was trained on an 80/20 train test split. An accuracy of 0.871 and an F1 score of 0.870 was achieved by our initial random forest model. The F1 score across each genre is shown below. 
 
-Quantitative Metrics:
 
-Analysis of Algorithm/Model:
+Comparable F1 scores were achieved across the different genres, with classical performing the best. Another feature of the random forest model is the calculation of feature importance. This tells us which features are most important in the model for differentiating between the genres.
+
+
+Perceptron variance was the most important feature.
+
+Future steps:
+
+We need to implement feature selection to ensure that all features included in the model are contributing to the predictions. We can also implement hyperparameter tuning to improve our model.
 
 Next Steps:
 
