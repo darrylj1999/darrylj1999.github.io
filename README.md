@@ -88,7 +88,7 @@ Looking at the data more closely, we can notice that the ranges of data vary vas
 
 We now achieve very good test results right off the bat, with an accuracy of 0.84 and F1 score of 0.8346. However, we’re clearly overfitting.
 
-One thought was that perhaps the model is too complicated. Reducing the bidirectional LSTM to a normal LSTM.
+One thought was that perhaps the model is too complicated. One idea was to reduce the bidirectional LSTM to a normal LSTM.
 
 ![norm128uni](https://github.com/darrylj1999/darrylj1999.github.io/assets/33488019/2a158f6b-f0ea-4ae7-9b52-ca50d102be6f)
 
@@ -98,9 +98,9 @@ Another way to combat overfitting is to reduce the number of features. The filen
 
 ![norm128unipca0 85](https://github.com/darrylj1999/darrylj1999.github.io/assets/33488019/e4046c33-1b3b-4714-a0c0-9e32c2adc0df)
 
-This particular run utilized a retained_variance of 85% made up of 23 principal components and had an accuracy of 0.7800 and a F1 score of 0.7743.
+This particular run utilized a retained variance of 85% made up of 23 principal components and had an accuracy of 0.7800 and a F1 score of 0.7743.
 
-Yet another way to combat overfitting is to introduce regularization in the form of dropout. However, due to its random nature, dropout varied in its effectiveness, making the accuracy and F1 score better at time while worse in others.
+Yet another way to combat overfitting is to introduce regularization in the form of dropout. However, due to its random nature, dropout varied in its effectiveness, making the accuracy and F1 score better at times while worse in others.
 
 ![norm128unidrop0 2](https://github.com/darrylj1999/darrylj1999.github.io/assets/33488019/d978c992-3617-47da-a3e4-11b645e50226)
 
@@ -139,13 +139,13 @@ In general, the confusion matrix looks like this:
 weighted avg      0.840     0.820     0.824       200
 ```
 
-The LSTM in general seems to have low precision with label 8, which is the reggae genre. In particular, the reggae genre seems to be often confused with the hip hop genre. Nevertheless, this might be worth investigating in the future.
+The LSTM in general seems to have low precision with label 8, which is the reggae genre. In particular, the reggae genre seems to be often confused with the hip hop genre and might be the reason for lower test results. Nevertheless, this might be worth investigating in the future.
 
 ### Next Steps:
 
 The most glaring issue is overfitting. Next steps include exploring more ways to mitigate this issue such as changes in architecture or exploring new features. For example, [2] made use of an additional 1D global average pooling layer between the layer normalization and linear layer. Furthermore, [2] used much smaller slices of music (as opposed to a large 3 seconds per slice) as well as the first and second derivatives of some of the features (particularly the MFCCs). Perhaps these methods would answer why the model is overfitting, and be the key to reducing it.
 
-GRU
+# GRU
 
 Quantitative Metrics:
 
