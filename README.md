@@ -119,7 +119,7 @@ This particular run reached a peak accuracy of 0.8600 and F1 score of 0.8539.
 
 In general, the confusion matrix looks like this:
 
-![confusion_matrix](https://github.com/darrylj1999/darrylj1999.github.io/assets/33488019/7208f7c6-4065-46cc-928f-7081257a9973)
+![confusion_matrix](https://github.com/darrylj1999/darrylj1999.github.io/assets/33488019/143dd98a-9c62-41be-bebc-f351e2b5308b)
 
  ```
 [[21  1  0  0  0  1  1  0  2  0]
@@ -207,5 +207,5 @@ Contribution Table
 | --- | --- |
 | Josh | Random Forest |
 | Nathan | Preprocessing done for SVM |
-| Elias | Set up boilerplate code for training sequential models (LSTM/GRU). Fully implemented BiLSTM. |
+| Elias | Finalized BiLSTM section of report + video |
 | Darryl | GRU |
