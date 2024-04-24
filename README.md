@@ -46,20 +46,23 @@ For this project, our inputs are 3 second excerpts from possible songs. We itera
 # Results and Discussion
 
 ## Random Forest
-We used accuracy as well as F1 score to measure the success of the random forest model. Before implementing the model, min-max scaling was implemented on all the numeric variables. This normalizes the data to ensure that data at different scales contribute equally to the model fitting. After performing the normalization, the model was trained on an 80/20 train test split. An accuracy of 0.871 and an F1 score of 0.870 was achieved by our initial random forest model. The F1 score across each genre is shown below. 
+We used accuracy as well as F1 score to measure the success of the random forest model. Before implementing the model, min-max scaling was implemented on all the numeric variables. This normalizes the data to ensure that data at different scales contribute equally to the model fitting. After performing the normalization, the model was trained on an 80/20 train test split. An accuracy of 0.871 and an F1 score of 0.870 was achieved by our initial random forest model. 
+
+In order to try and optimize our random forest model, we implemented a random search to find the best parameters. After running this, we were able to increase our accuracy to 0.888 and our F1 score to 0.887 on the testing set.
+
+The F1 score across each genre is shown below. 
 
 ![josh_1](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/230112eb-aa26-41f5-a26d-cb3542d7911c)
-
 
 Comparable F1 scores were achieved across the different genres, with classical performing the best. Another feature of the random forest model is the calculation of feature importance. This tells us which features are most important in the model for differentiating between the genres.
 
 ![josh_2](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/a1b6c0b2-9712-473f-a6f3-c10d20d1f2e9)
 
-Perceptron variance was the most important feature.
+Perceptron variance was the most important feature, with chroma_stft_mean and rms_var also contributing a lot to the strength of the model.
 
-Future steps:
+### Future steps:
 
-We need to implement feature selection to ensure that all features included in the model are contributing to the predictions. We can also implement hyperparameter tuning to improve our model.
+There are a few steps that could be taken to further improve the performance of the random forest model. We could do more analysis on the features and perform feature selection to ensure that only the necessary audio characteristics are being included. We could also integrate cross-validation methods with our hyperparameter tuning. This would aid in accurately estimating the model’s capabilities and mitigate overfitting risks.
 
 ## SVM
 ### Quantitative metrics:
