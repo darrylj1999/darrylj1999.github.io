@@ -63,15 +63,33 @@ We need to implement feature selection to ensure that all features included in t
 
 ## SVM
 ### Quantitative metrics:
-Accuracy: Calculate the accuracy of the SVM model on the test dataset.
-Precision and Recall: Compute precision and recall scores to understand the model's performance in binary classification tasks.
-F1 Score: Calculate the F1 score to balance precision and recall.
+Accuracy: Accuracy and F1 score are metrics that are used to benchmark models to evaluate the SVM. The figure belows displays our results when training the SVM to predict the song's genre.
+
+![nate_SVM](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/ed3856e9-fc65-4900-8082-aa75a3392ccf)
+
+The best results obtained were an accuracy of 0.87 and F1 score of 0.87. These results were obtained by normalizing data and a radial basis function kernel. These were the f1 scores per category.
+
+The following classification report was obtained from the SVM
+
+|  | precision | recall | f1-score | support |
+|---|---|---|---|---|
+| blues | 0.90 | 0.89| 0.89|  227 |
+| classical | 0.87 | 0.98| 0.93|  191|
+| country | 0.84 | 0.86| 0.85|  241|
+| disco | 0.82 | 0.82| 0.82|  225|
+| hiphop | 0.94 | 0.87| 0.91|  234|
+| jazz | 0.86 | 0.91| 0.89|  208|
+| metal | 0.90 | 0.95| 0.93|  190|
+| pop | 0.90 | 0.86| 0.88|  236|
+| reggae | 0.91 | 0.85| 0.88|  228|
+| rock | 0.75 | 0.73| 0.74| 218|
+|accuracy||| 0.87| 2198|
+|macro avg| 0.87|0.87|0.87|2198|
+|weighted avg| 0.87|0.87|0.87|2198|
 
 ### Next Steps:
 
-Visualizations: Plot decision boundaries for different SVM kernels (linear, polynomial, radial basis function) to illustrate how they separate classes
-
-Analysis of Algorithm/Model: Comparison with Other Models
+At first the model was trained on only the 30 second segments of the songs, but that produced an accuracy of .73. When it analyzed the 3 second segments in addition to the 30 second segments, the accuracy increased. Later on, various kernels were experimented with in order to find the best one that produced the highest accuracy and F1 scores. 
 
 
 ## BiLSTM
@@ -132,7 +150,7 @@ In general, the confusion matrix looks like this:
  [ 0  0  0  0  0  0  0 16  2  0]
  [ 1  0  0  1  0  0  0  1 10  0]
  [ 0  0  1  2  0  0  0  0  2 13]]
-              precision    recall  f1-score   support
+|        precision    recall  f1-score   support
 
          0.0      0.870     0.769     0.816        26
          1.0      0.947     0.947     0.947        19
