@@ -182,7 +182,37 @@ Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 
 ![loss_gru](https://github.com/darrylj1999/darrylj1999.github.io/assets/25251686/df7f2d93-3cb1-4ec7-9f1a-e06a8e717bce)
 
+# Model Comparison
 
+We evaluated the effectiveness of Random Forest, Support Vector Machine (SVM), Bidirectional Long Short-Term Memory (BiLSTM), and Gated Recurrent Unit (GRU) models in classifying music genres. The quantitative results are shown below. 
+
+| Metric | Random Forest | SVM | BiLSTM | GRU |
+|---|---|---|---|---|
+| Accuracy | 0.888 | 0.8699 | 0.8600 | 0.9351 |
+| F1-Score | 0.887 | 0.8709 | 0.8539 | 0.9011 |
+
+
+As shown in the table above, the GRU model performed the best in terms of both accuracy and F1-score by a wide margin. After a significant drop in accuracy, random forest performed the second best, with SVM and BiLSTM slightly behind in third and fourth.
+
+In addition to accuracy and F1-score, other factors should be considered when comparing the performance of the models. While GRU achieved the highest scores, its training time was longer compared to Random Forest and SVM due to its sequential nature.Random Forest, an ensemble method, typically offers faster training and prediction times, and may be the best option when real-time classification is crucial. SVM provides a balance between accuracy and computational complexity, making it more suitable for medium-sized datasets.
+
+Interpretability is another crucial aspect when comparing models. Random Forest provides feature importance analysis, helping to understand the contribution of specific features to the genre classification. SVM can offer helpful insights into the separability of different genres in the feature space. BiLSTM and GRU, being neural network-based models, offer less interpretability but excel in capturing complex patterns in the data. The choice of model not only depends on the performance metrics but also on considerations such as interpretability, computational efficiency, and specific application-based requirements.
+
+
+# Gantt Chart
+Gantt Chart: [https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true](https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true)
+
+# Contribution Table
+
+| Name | Final Contributions |
+| --- | --- |
+| Josh | Authored a Dataset Description, procured reference [1], identified quantitative metrics and project goals, summarized the problem into into a problem statement, proposed Random Forest and SVM models to ensure a diversified approach to genre classification |
+| Nathan | Wrote part and researched part of literature review, procured references [5] and [6], set up github repository |
+| Elias | Found music genre classification dataset, procured references [2] and [3], proposed and justified PCA preprocessing, proposed and justified with research MFCC preprocessing, proposed and justified with research KNN model, proposed and justified with research BiLSTM model, set project goals based on references, confirmed that random forest and SVM have been previously used in this domain’s research, scheduled meetings |
+| Darryl | Added two references to Gated Recurrent Units and summarized their contents in Literature Review. Publish Github Page using Markdown to ensure our results are viewable in web format to the teaching team. |
+
+
+# References
 
 [1] M. S. Rao, O. Pavan Kalyan, N. N. Kumar, M. Tasleem Tabassum and B. Srihari, "Automatic Music Genre Classification Based on Linguistic Frequencies Using Machine Learning," 2021 International Conference on Recent Advances in Mathematics and Informatics (ICRAMI), Tebessa, Algeria, 2021, pp. 1-5, doi: 10.1109/ICRAMI52622.2021.9585937.
 
@@ -198,14 +228,4 @@ Figure: Display (F-Score) and Training (Cross Entropy) Loss for GRU.
 
 [7] L. Yang, J. Hu and Z. Zhang, "Audio Scene Classification Based on Gated Recurrent Unit," 2019 IEEE International Conference on Signal, Information and Data Processing (ICSIDP), Chongqing, China, 2019, pp. 1-5, doi: 10.1109/ICSIDP47821.2019.9173051.
 
-[8] [1] Y. Xu, Q. Kong, Q. Huang, W. Wang, and M. D. Plumbley, “Convolutional gated recurrent neural network incorporating spatial features for audio tagging,” arXiv.org, https://arxiv.org/abs/1702.07787 (accessed Feb. 21, 2024). 
-
-Gantt Chart: [https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true](https://docs.google.com/spreadsheets/d/14nsBST_ze4GHueKOfuRy0kKMCA_hBqIP/edit?usp=sharing&ouid=105417584955844239358&rtpof=true&sd=true)
-
-Contribution Table
-| Name | Midterm Contributions |
-| --- | --- |
-| Josh | Random Forest |
-| Nathan | Preprocessing done for SVM |
-| Elias | Finalized BiLSTM section of report + video |
-| Darryl | GRU |
+[8] Y. Xu, Q. Kong, Q. Huang, W. Wang, and M. D. Plumbley, “Convolutional gated recurrent neural network incorporating spatial features for audio tagging,” arXiv.org, https://arxiv.org/abs/1702.07787 (accessed Feb. 21, 2024). 
